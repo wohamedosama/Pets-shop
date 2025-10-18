@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pets_shop/core/routing/routes.dart';
+import 'package:pets_shop/features/home/presentation/screens/home_screen.dart';
 import 'package:pets_shop/features/onboarding/presentation/screen/onboarding_screen.dart';
 
 class AppRouter {
@@ -9,11 +10,14 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const OnboardingScreen(),
         );
+      case Routes.home:
+        return MaterialPageRoute(builder: (context) => const HomeScreen());
       default:
         return MaterialPageRoute(
-          builder: (_) => Scaffold(
-            body: Center(child: Text('No route found ${settings.name}')),
-          ),
+          builder:
+              (_) => Scaffold(
+                body: Center(child: Text('No route found ${settings.name}')),
+              ),
         );
     }
   }
